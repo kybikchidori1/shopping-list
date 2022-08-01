@@ -1,0 +1,50 @@
+.main-page {
+    &__title {
+        height: 60px;
+        margin: 20px 0;
+    }
+    &__content {
+        display: flex;
+        gap: 16px;
+        padding: 0 16px;
+        height: calc(100vh - 100px);
+    }
+    &__left-content {
+        height: 100%;
+        width: 40%;
+    }
+    &__right-content {
+        height: 100%;
+        width: 60%;
+    }
+    &__content-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+    }
+    &__add-goods-button {
+        margin-left: 16px;
+    }
+
+    &__goods-container {
+        display: inline-flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        gap: 16px;
+        height: calc(100vh - 140px);
+        overflow: auto;
+        padding-right: 16px;
+
+        &::-webkit-scrollbar-thumb {
+            background: #bbb2c5;
+            border-radius: 4px;
+        }
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "goods": [
+        {
+            "id": 1,
+            "name": "Морковь",
+            "price": "80",
+            "image": "https://editor.eda.ru/uploads/8/18/818a32450f3142509eac5a7aa35052e9.jpg",
+            "description": "Просто морковь"
+        },
+        {
+            "id": 2,
+            "name": "Хлеб",
+            "price": "20",
+            "image": "https://m.dom-eda.com/uploads/images/catalog/item/88f4561953/ce4cf9522d_1000.jpg",
+            "description": ""
+        },
+        {
+            "id": 3,
+            "name": "Молоко",
+            "price": "40",
+            "image": "https://rskrf.ru/upload/iblock/359/3596635092512e3ea910cf2c95c96588.jpg",
+            "description": "Желательно не более 2%"
+        }
+    ],
+    "list": [
+        {
+            "id": 1,
+            "itemId": 1,
+            "amount": 3
+        },
+        {
+            "id": 2,
+            "itemId": 2,
+            "amount": 1
+        },
+        {
+            "id": 3,
+            "itemId": 3,
+            "amount": 2
+        }
+    ]
+}

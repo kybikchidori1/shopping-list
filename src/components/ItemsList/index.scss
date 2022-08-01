@@ -1,0 +1,38 @@
+.items-list {
+    height: calc(100vh - 140px);
+    overflow: auto;
+    padding-right: 16px;
+
+    &::-webkit-scrollbar-thumb {
+        background: #bbb2c5;
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &__container {
+        height: 100%;
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        background-color: #272d37;
+        padding: 8px 16px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    &__amount-box {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+}
