@@ -42,7 +42,7 @@ const ItemsList = ({
         {getItems(list, goods).map((normalizedItem: NormalizedItem) => (
             <div key={normalizedItem.id} className="items-list__item">
                 <div>{normalizedItem.item?.name}</div>
-                <div className="items-list__amount-box">
+                <div className="items-list__amount-box flex-center">
                     <div>
                         {normalizedItem.item?.price}руб x{" "}
                         {normalizedItem.amount}

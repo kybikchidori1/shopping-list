@@ -10,11 +10,13 @@ const Wrapper = ({
     children,
     className,
 }: HTMLProps<HTMLDivElement>): JSX.Element => (
-    <div className={`modal__wrapper ${className ?? ""}`}>{children}</div>
+    <div className={`modal__wrapper flex-center ${className ?? ""}`}>
+        {children}
+    </div>
 );
 
 const Header = ({ title, actions, className }: HeaderProps): JSX.Element => (
-    <div className={`modal__header ${className ?? ""}`}>
+    <div className={`modal__header flex-center ${className ?? ""}`}>
         <div className="modal__title">{title}</div>
         <div>{actions ?? actions}</div>
     </div>

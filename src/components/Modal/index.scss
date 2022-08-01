@@ -1,9 +1,6 @@
 .modal {
     &__wrapper {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         position: absolute;
         top: 0;
         left: 0;
@@ -23,14 +20,10 @@
 
     &__header {
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         height: 56px;
         width: 680px;
         padding: 16px;
         background-color: #272d37;
-
         border-bottom: 1px solid #3b414b;
     }
 

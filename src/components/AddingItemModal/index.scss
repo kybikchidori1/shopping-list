@@ -1,28 +1,30 @@
 .addingItemModal {
     gap: 0px;
+
     &__inputs-box {
         display: flex;
     }
+
     &__left-content {
         width: 50%;
     }
+
     &__right-content {
         width: 50%;
         height: 100%;
         padding-left: 16px;
     }
+
     &__label {
         text-align: start;
         margin-bottom: 2px;
     }
+
     &__img {
         height: 300px;
         width: 100%;
         border: 1px solid rgb(149, 149, 149);
         border-radius: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         color: #8f9ca9;
         overflow: hidden;
         img {

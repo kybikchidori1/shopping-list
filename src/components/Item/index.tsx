@@ -19,7 +19,7 @@ const Item = ({
 }: ItemProps): JSX.Element => {
     return (
         <div className="item">
-            <div className="item__image-box">
+            <div className="item__image-box flex-center">
                 <img className="item__image" src={image} alt="" />
             </div>
             <div className="item__name-box">

@@ -6,16 +6,16 @@ import Modal from "../Modal";
 import Textarea from "../Textarea";
 import "./index.scss";
 
-interface AddingItemModalProps {
-    onClose(): void;
-    onConfirm(Item: ModalItemProps): void;
-}
-
-interface ModalItemProps {
+export interface ModalItemProps {
     name: string;
     price: string;
     image: string;
     description: string;
+}
+
+interface AddingItemModalProps {
+    onClose(): void;
+    onConfirm(item: ModalItemProps): void;
 }
 
 const initialItem: ModalItemProps = {
@@ -111,7 +111,7 @@ const AddingItemModal = ({
                         </div>
                     </div>
                     <div className="addingItemModal__right-content">
-                        <div className="addingItemModal__img">
+                        <div className="addingItemModal__img flex-center">
                             {modalData.image ? (
                                 <img src={modalData.image} alt="" />
                             ) : (

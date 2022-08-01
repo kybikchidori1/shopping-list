@@ -1,109 +1,25 @@
-import { useEffect, useState } from "react";
 import AddingItemModal from "../../components/AddingItemModal";
 import Button from "../../components/Button";
 import Item from "../../components/Item";
-import ItemsList, { NormalizedItem } from "../../components/ItemsList";
-import Notification, { NotificationProps } from "../../components/Notification";
-import { getData } from "../../library/api";
+import ItemsList from "../../components/ItemsList";
+import Notification from "../../components/Notification";
 import { COLOR_TYPES } from "../../library/constants.enum";
-import { ListItem, Product } from "../../library/interfaces";
-
 import "./index.scss";
+import useMainPage from "./useMainPage";
 
 const MainPage = () => {
-    const [itemIdCounter, setItemIdCounter] = useState<number>(4);
-    const [listIdCounter, setListIdCounter] = useState<number>(4);
-
-    const [items, setItems] = useState<Product[]>([]);
-    const [listItems, setListItems] = useState<ListItem[]>([]);
-
-    const [showAddingItemModal, setShowAddingItemModal] =
-        useState<boolean>(false);
-    const [notification, setNotification] = useState<NotificationProps | null>(
-        null
-    );
-
-    useEffect(() => {
-        getData().then((response) => {
-            setItems(response.goods);
-            setListItems(response.list);
-        });
-    }, []);
-
-    const itemAction = (id: number) => {
-        setListItems((prevState) => {
-            if (prevState.some((listItem) => listItem.itemId === id)) {
-                return prevState.map((item) => {
-                    if (item.itemId === id) {
-                        return {
-                            id: item.id,
-                            itemId: item.itemId,
-                            amount: item.amount + 1,
-                        };
-                    }
-                    return item;
-                });
-            } else {
-                setListIdCounter((prevState) => prevState + 1);
-                return [
-                    ...prevState,
-                    { id: listIdCounter, itemId: id, amount: 1 },
-                ];
-            }
-        });
-    };
-
-    const buyItemHandler = (normalizedItem: NormalizedItem) => {
-        const price = normalizedItem.item?.price;
-        const amount = normalizedItem.amount;
-        const name = normalizedItem.item?.name;
-
-        if (price && amount && name) {
-            setNotification({
-                title: "Покупка товара",
-                message: `Вы действительно хотите купить ${name}? Вы потратите ${
-                    amount * +price
-                } рублей.`,
-                approveText: "Купить",
-                cancel: () => {
-                    setNotification(null);
-                },
-                approve: () => {
-                    setNotification(null);
-                    setListItems((prevState) =>
-                        prevState.filter(
-                            (item) => item.id !== normalizedItem.id
-                        )
-                    );
-                },
-            });
-        }
-    };
-
-    const deleteItemHandler = (normalizedItem: NormalizedItem) => {
-        const price = normalizedItem.item?.price;
-        const amount = normalizedItem.amount;
-        const name = normalizedItem.item?.name;
-
-        if (price && amount && name) {
-            setNotification({
-                title: "Удаление товара",
-                message: `Вы действительно хотите удалить ${name} из списка?`,
-                approveText: "Удалить",
-                cancel: () => {
-                    setNotification(null);
-                },
-                approve: () => {
-                    setNotification(null);
-                    setListItems((prevState) =>
-                        prevState.filter(
-                            (item) => item.id !== normalizedItem.id
-                        )
-                    );
-                },
-            });
-        }
-    };
+    const {
+        items,
+        listItems,
+        showAddingItemModal,
+        notification,
+        itemAction,
+        buyItemHandler,
+        deleteItemHandler,
+        openAddingItemModal,
+        closeAddingItemModal,
+        onConfirmAddingItemModal,
+    } = useMainPage();
 
     return (
         <>
@@ -112,7 +28,9 @@ const MainPage = () => {
             </h1>
             <div className="main-page__content">
                 <div className="main-page__left-content">
-                    <div className="main-page__content-title">Ваши список</div>
+                    <div className="main-page__content-title flex-center">
+                        Ваши список
+                    </div>
                     {listItems.length ? (
                         <ItemsList
                             list={listItems}
@@ -125,13 +43,13 @@ const MainPage = () => {
                     )}
                 </div>
                 <div className="main-page__right-content">
-                    <div className="main-page__content-title">
+                    <div className="main-page__content-title flex-center">
                         Список товаров
                         <Button
                             text="Добавить"
                             className="main-page__add-goods-button"
                             type={COLOR_TYPES.info}
-                            onClick={() => setShowAddingItemModal(true)}
+                            onClick={openAddingItemModal}
                         />
                     </div>
                     <div className="main-page__goods-container">
@@ -154,16 +72,8 @@ const MainPage = () => {
 
             {showAddingItemModal && (
                 <AddingItemModal
-                    onClose={() => setShowAddingItemModal(false)}
-                    onConfirm={(item) => {
-                        setItemIdCounter((prevState) => prevState + 1);
-
-                        setItems((prevState) => [
-                            ...prevState,
-                            { ...item, id: itemIdCounter },
-                        ]);
-                        setShowAddingItemModal(false);
-                    }}
+                    onClose={closeAddingItemModal}
+                    onConfirm={onConfirmAddingItemModal}
                 />
             )}
 

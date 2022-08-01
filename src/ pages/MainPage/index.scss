@@ -2,6 +2,7 @@
     &__title {
         height: 60px;
         margin: 20px 0;
+        text-align: center;
     }
     &__content {
         display: flex;
@@ -18,9 +19,6 @@
         width: 60%;
     }
     &__content-title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         height: 40px;
         font-weight: 700;
         font-size: 18px;
