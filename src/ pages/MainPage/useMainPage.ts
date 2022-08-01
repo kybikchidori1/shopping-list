@@ -104,9 +104,20 @@ const useMainPage = (): HookReturn => {
                 approve: () => {
                     setNotification(null);
                     setListItems((prevState) =>
-                        prevState.filter(
-                            (item) => item.id !== normalizedItem.id
-                        )
+                        normalizedItem.amount < 2
+                            ? prevState.filter(
+                                  (item) => item.id !== normalizedItem.id
+                              )
+                            : prevState.map((item) => {
+                                  if (item.id === normalizedItem.id) {
+                                      return {
+                                          ...item,
+                                          amount: item.amount - 1,
+                                      };
+                                  }
+
+                                  return item;
+                              })
                     );
                 },
             });

@@ -27,7 +27,7 @@ const Body = ({
     className,
     ...props
 }: HTMLProps<HTMLDivElement>): JSX.Element => (
-    <div className={`modal__body ${className ?? ""}`} {...props}>
+    <div className={`modal__body flex-center ${className ?? ""}`} {...props}>
         {children}
     </div>
 );
