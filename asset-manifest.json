@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/shopping-list/static/css/main.15eaa82d.css",
+    "main.js": "/shopping-list/static/js/main.02846d7f.js",
+    "static/media/poppins-v20-latin-regular.svg": "/shopping-list/static/media/poppins-v20-latin-regular.04277a799cb3f1b29dfa.svg",
+    "static/media/poppins-v20-latin-500.svg": "/shopping-list/static/media/poppins-v20-latin-500.138d54dda216e46d9830.svg",
+    "static/media/poppins-v20-latin-700.svg": "/shopping-list/static/media/poppins-v20-latin-700.faf69e7f589ee957de53.svg",
+    "static/media/poppins-v20-latin-regular.ttf": "/shopping-list/static/media/poppins-v20-latin-regular.80946c0880373b223d9c.ttf",
+    "static/media/poppins-v20-latin-500.ttf": "/shopping-list/static/media/poppins-v20-latin-500.c5bf954f85d4e113650f.ttf",
+    "static/media/poppins-v20-latin-700.ttf": "/shopping-list/static/media/poppins-v20-latin-700.69376764e54ecb0c5b5b.ttf",
+    "static/media/poppins-v20-latin-regular.woff": "/shopping-list/static/media/poppins-v20-latin-regular.f61407da33b59324fbef.woff",
+    "static/media/poppins-v20-latin-700.woff": "/shopping-list/static/media/poppins-v20-latin-700.c54a52658bf21b37083d.woff",
+    "static/media/poppins-v20-latin-500.woff": "/shopping-list/static/media/poppins-v20-latin-500.8609f9c59114a158e3ad.woff",
+    "static/media/poppins-v20-latin-regular.eot": "/shopping-list/static/media/poppins-v20-latin-regular.27a38aa36ed539d2b33f.eot",
+    "static/media/poppins-v20-latin-700.eot": "/shopping-list/static/media/poppins-v20-latin-700.f808204601ecdcaf5c4d.eot",
+    "static/media/poppins-v20-latin-500.eot": "/shopping-list/static/media/poppins-v20-latin-500.7caad43c36b57f718834.eot",
+    "static/media/poppins-v20-latin-regular.woff2": "/shopping-list/static/media/poppins-v20-latin-regular.405055dd680fa1dcdfa2.woff2",
+    "static/media/poppins-v20-latin-700.woff2": "/shopping-list/static/media/poppins-v20-latin-700.d86662fe776dae29ea78.woff2",
+    "static/media/poppins-v20-latin-500.woff2": "/shopping-list/static/media/poppins-v20-latin-500.08491d3f7fe7ae88ef44.woff2",
+    "index.html": "/shopping-list/index.html",
+    "main.15eaa82d.css.map": "/shopping-list/static/css/main.15eaa82d.css.map",
+    "main.02846d7f.js.map": "/shopping-list/static/js/main.02846d7f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15eaa82d.css",
+    "static/js/main.02846d7f.js"
+  ]
+}
