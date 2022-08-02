@@ -43,8 +43,22 @@ const AddingItemModal = ({
         setModalData((prevState) => ({ ...prevState, [name]: value }));
     };
 
+    const isCorrectUrl = (url: string) => {
+        if (url.length < 1) return true;
+
+        const regex =
+            /(^https?:\/\/)?[a-z0-9~_\-\.]+\.[a-z]{2,9}(\/|:|\?[!-~]*)?$/i;
+
+        return regex.test(String(url).toLowerCase());
+    };
+
     const shouldShowAddButton = (): boolean => {
-        if (modalData.image && modalData.name && +modalData.price > 0) {
+        if (
+            modalData.image &&
+            modalData.name &&
+            +modalData.price > 0 &&
+            isCorrectUrl(modalData.image)
+        ) {
             return false;
         }
 
@@ -92,6 +106,11 @@ const AddingItemModal = ({
                                 onChange={modalHandler}
                                 autoComplete="off"
                                 required
+                                label={
+                                    isCorrectUrl(modalData.image)
+                                        ? "*Это обязательное поле"
+                                        : "Некорректная ссылка"
+                                }
                             />
                         </div>
                         <div className="addingItemModal__preview">

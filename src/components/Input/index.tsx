@@ -1,12 +1,18 @@
 import { InputHTMLAttributes } from "react";
 import "./index.scss";
 
-const Input = (props: InputHTMLAttributes<HTMLInputElement>): JSX.Element => {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+    label?: string;
+}
+
+const Input = (props: InputProps): JSX.Element => {
     return (
         <div>
             <input {...props} className="input" />
             {props.required && (
-                <div className="input__title">*Это обязательное поле</div>
+                <div className="input__title">
+                    {props.label ?? "*Это обязательное поле"}
+                </div>
             )}
         </div>
     );

@@ -21,7 +21,9 @@ const Notification = ({
     return (
         <Modal.Wrapper>
             <Modal.Header title={title} />
-            <Modal.Body className="notification__message">{message}</Modal.Body>
+            <Modal.Body className="notification__message flex-center">
+                {message}
+            </Modal.Body>
             <Modal.Footer>
                 <Button
                     text="Отменить"

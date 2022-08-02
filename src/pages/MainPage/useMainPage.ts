@@ -21,10 +21,8 @@ interface HookReturn {
 const useMainPage = (): HookReturn => {
     const [itemIdCounter, setItemIdCounter] = useState<number>(4);
     const [listIdCounter, setListIdCounter] = useState<number>(4);
-
     const [items, setItems] = useState<Product[]>([]);
     const [listItems, setListItems] = useState<ListItem[]>([]);
-
     const [showAddingItemModal, setShowAddingItemModal] =
         useState<boolean>(false);
     const [notification, setNotification] = useState<NotificationProps | null>(
